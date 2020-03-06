@@ -127,11 +127,11 @@ class IoMessage:
         data_offset = 33
         # id
         field_len = bytes[2]
-        msg.id = str(bytes[data_offset: data_offset + field_len])
+        msg.id = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # tag
         field_len = unpack('>H', bytes[3:5])[0]
-        msg.tag = str(bytes[data_offset: data_offset + field_len])
+        msg.tag = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # group id
         field_len = bytes[5]
