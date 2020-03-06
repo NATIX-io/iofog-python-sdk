@@ -2,18 +2,16 @@
 ## python 3 support
 To use with python3 follow below instruction.
  - open your Dockerfile
- - ```
-FROM python:3.7-stretch
-COPY . /src
-
-RUN pip install ws4py
-RUN git clone /src/iofog-python-sdk
-WORKDIR /src/iofog-python-sdk
-RUN python setup.py install
-RUN pip install [your optional libraries]
-WORKDIR /src
-CMD ["python", "/src/[your main .py file]"]
-```
+ - ``` FROM python:3.7-stretch
+    COPY . /src
+    RUN pip install ws4py
+    RUN git clone /src/iofog-python-sdk
+    WORKDIR /src/iofog-python-sdk
+    RUN python setup.py install
+    RUN pip install [your optional libraries]
+    WORKDIR /src
+    CMD ["python", "/src/[your main .py file]"]
+    ```
  - decode your message object contentdata attribute when ever you fetch it like `io_msg.contentdata.decode('utf-8')`
  
 This module lets you easily build an ioElement. It gives you all the functionality to interact with ioFog via Local API. It contains all necessary methods for IoMessage transformation as well.
