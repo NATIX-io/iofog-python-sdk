@@ -47,6 +47,7 @@ def make_post_request(url, body_type, body):
     encoded_body = body.encode("utf-8")
     req = urllib_request.Request(url, encoded_body, {'Content-Type': body_type})
     response = urllib_request.urlopen(req)
+    print('call output:', response.read())
     return json.loads(response.read())
 
 
