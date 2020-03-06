@@ -139,6 +139,7 @@ class IoFogMessageWsClient(IoFogWsClient):
             msg_data = data[5:]
             if len(msg_data) == 0:
                 return
+            print('the on_message content:', msg_data.decode())
             msg = IoMessage.from_bytearray(msg_data)
             self.send(bytearray([CODE_ACK]), binary=True)
             self.listener.on_message(msg)
