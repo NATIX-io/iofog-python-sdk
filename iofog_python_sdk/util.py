@@ -44,7 +44,8 @@ def bytearray_to_num(arr):
 
 
 def make_post_request(url, body_type, body):
-    req = urllib_request.Request(url, body, {'Content-Type': body_type})
+    encoded_body = body.encode("utf-8")
+    req = urllib_request.Request(url, encoded_body, {'Content-Type': body_type})
     response = urllib_request.urlopen(req)
     return json.loads(response.read())
 
