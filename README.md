@@ -5,7 +5,7 @@ To use with python3 follow below instruction.
  - ``` FROM python:3.7-stretch
     COPY . /src
     RUN pip install ws4py
-    RUN git clone /src/iofog-python-sdk
+    RUN git clone https://github.com/NATIX-io/iofog-python-sdk.git /src/iofog-python-sdk
     WORKDIR /src/iofog-python-sdk
     RUN python setup.py install
     RUN pip install [your optional libraries]
