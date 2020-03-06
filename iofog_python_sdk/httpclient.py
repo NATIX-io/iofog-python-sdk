@@ -50,6 +50,7 @@ class IoFogHttpClient:
             raise IoFogHttpException(e.code, e.read())
         messages = []
         for json_msg in next_messages_resp[MESSAGES]:
+            print('the next_message content:', json_msg)
             messages.append(IoMessage.from_json(json_msg))
         return messages
 
@@ -65,6 +66,7 @@ class IoFogHttpClient:
         }
         messages = []
         for json_msg in next_messages_resp[MESSAGES]:
+            print('the time_message content:', json_msg)
             messages.append(IoMessage.from_json(json_msg))
         response[MESSAGES] = messages
         return response
