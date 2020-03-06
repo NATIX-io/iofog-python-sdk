@@ -135,7 +135,7 @@ class IoMessage:
         data_offset += field_len
         # group id
         field_len = bytes[5]
-        msg.groupid = str(bytes[data_offset: data_offset + field_len])
+        msg.groupid = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # sequence number
         field_len = bytes[6]
@@ -155,15 +155,15 @@ class IoMessage:
         data_offset += field_len
         # publisher
         field_len = bytes[10]
-        msg.publisher = str(bytes[data_offset: data_offset + field_len])
+        msg.publisher = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # auth id
         field_len = unpack('>H', bytes[11:13])[0]
-        msg.authid = str(bytes[data_offset: data_offset + field_len])
+        msg.authid = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # auth group
         field_len = unpack('>H', bytes[13:15])[0]
-        msg.authgroup = str(bytes[data_offset: data_offset + field_len])
+        msg.authgroup = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # chain position
         field_len = bytes[15]
@@ -171,15 +171,15 @@ class IoMessage:
         data_offset += field_len
         # hash
         field_len = unpack('>H', bytes[16:18])[0]
-        msg.hash = str(bytes[data_offset: data_offset + field_len])
+        msg.hash = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # previous hash
         field_len = unpack('>H', bytes[18:20])[0]
-        msg.previoushash = str(bytes[data_offset: data_offset + field_len])
+        msg.previoushash = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # nonce
         field_len = unpack('>H', bytes[20:22])[0]
-        msg.nonce = str(bytes[data_offset: data_offset + field_len])
+        msg.nonce = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # difficulty target
         field_len = bytes[22]
@@ -187,11 +187,11 @@ class IoMessage:
         data_offset += field_len
         # info type
         field_len = bytes[23]
-        msg.infotype = str(bytes[data_offset: data_offset + field_len])
+        msg.infotype = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # info format
         field_len = bytes[24]
-        msg.infoformat = str(bytes[data_offset: data_offset + field_len])
+        msg.infoformat = str(bytes[data_offset: data_offset + field_len],'utf-8')
         data_offset += field_len
         # context data
         field_len = unpack('>I', bytes[25:29])[0]
