@@ -28,7 +28,7 @@ This module lets you easily build an ioElement. It gives you all the functionali
 
 Install python package:
 ```bash
-sudo python2 -m pip install iofog-python-sdk
+sudo python3 -m pip install iofog-python-sdk
 ```
 
 Import iofog client and additional classes to your project:
